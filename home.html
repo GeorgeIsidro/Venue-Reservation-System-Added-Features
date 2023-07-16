@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Venue Reservation System</title>
+    <link rel="stylesheet" href="homestyle.css">
+	<link rel="stylesheet" href="transition.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+	<script src="popupscript.js"> </script>
+</head>
+<body>
+    
+
+    
+
+
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <img src = "icon-reservation.png" class = "picture-icon">
+            </div>
+            <div class = navbar-text>
+                <h2 class="logo">Venue Reservation</h2>
+            </div>
+
+
+        
+				  
+
+        </div> 
+        
+        <div class="menu">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="Register.html">REGISTER</a></li>
+                <li><a href="#">VENUES</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Venue <br><span> Reservation </span> <br> System</h1>
+            <p class="par"> <br>The Venue Reservation System is an efficient and user-friendly online platform designed to <br> simplify 
+			and streamline the process of reserving and managing venues for various events.<br> Whether you're 
+			organizing a corporate conference, wedding reception, concert, or any other <br> gathering, this system 
+			provides a comprehensive solution to meet your venue needs.</p>
+
+               
+
+                <div class="form">
+                    <h2>Login Here</h2>
+                    <input type="Username" name="Username" placeholder="Enter Username Here">
+                    <input type="password" name="" placeholder="Enter Password Here">
+                    <button class="btnn" onclick="ERROR()"><a href="#">Login</a></button>
+                    
+
+                    <p class="link">Don't have an account<br>
+                    <a onclick="openForm()">Sign up here </a>
+
+                </div>
+				<div id="overlay" class="overlay">
+                    <div class="popup-container">
+                      
+                      <form> 
+                        <h6>Registration Form</h6>
+                        <input name="FirstName" type="text" value="First Name" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
+                        <input name="LastName" type="text" value="Last Name" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
+                        <input name="Email" type="Email" value="Email" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
+                        <input name="Password" type="text" value="Enter Password" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
+                        <input name="Password2" type="text" value="Re-Enter Password" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
+                        
+                        <input type="submit" value="Register">
+                      </form>
+                      <button onclick="closeForm()">Close</button>
+                    </div>
+                </div>
+				
+
+                <div class = "institution-images">
+                    <img src = "dlsu-logo.png" style="width: 200px; height: 200px;">
+                    <img src = "notre-dame.png" style="width: 200px; height: 200px;">
+                </div>
+
+
+				
+                    </div>
+                </div>
+				
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+	
+</body>
+</html>
