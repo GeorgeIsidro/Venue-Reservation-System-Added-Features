@@ -1,61 +1,39 @@
 <!DOCTYPE html>
 	<head>
-		<title>
-			Register Page
-		</title>
+		<title>Venue Reservation System</title>
+		<link rel="stylesheet" href="homestyle.css">
+		<link rel="stylesheet" href="equipment.css">
+		<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+		<script src="popupscript.js"> </script>
 	<style>
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 20px;
-		}
-
-		h2 {
-			font-size: 24px;
-			margin-bottom: 10px;
-		}
-
-		table {
-			border-collapse: collapse;
-			margin-bottom: 20px;
-		}
-
-		table td {
-			padding: 5px;
-		}
-
-		input[type="text"],
-		input[type="password"] {
-			padding: 5px;
-			width: 200px;
-		}
-
-		.error {
-			color: red;
-			font-style: italic;
-			margin-left: 5px;
-		}
-
-		.btn {
-			padding: 8px 16px;
-			background-color: #337ab7;
-			color: white;
-			border: none;
-			cursor: pointer;
-		}
-
-		.btn:hover {
-			background-color: #23527c;
-		}
+		
 	</style>
 	</head>
 	<body>
-	
-	<!-- Back End
-		1. Load db1
-		2. Get Records
-		3. Check if user-pw pair exists
-	-->
+		
+		<div class="main">
+				<div class="navbar">
+					<div class="icon">
+						<img src = "icon-reservation.png" class = "picture-icon">
+					</div>
+					<div class = navbar-text>
+						<h2 class="logo">Venue Reservation</h2>
+					</div>
+
+
+				
+						  
+
+				</div> 
+				
+				<div class="menu">
+					<ul>
+						<li><a href="home.php">HOME</a></li>
+						<li><a href="#">ABOUT</a></li>
+						<li><a href="Act9-1Register.php">REGISTER</a></li>
+					</ul>
+				</div>
 	
 	<?php 
 		
@@ -158,49 +136,49 @@
 	
 	
 	<!-- Front-end -->
-	
-	<h2> REGISTRATIONS </h2>
-	Fill out all details below: <br>
-	
-	<form method = "post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
-	
-		<table>
-		<tr>
-			<td>Last Name: </td>
-			<td><input type="text" name="lastname" autocomplete="off"><span class="error"><?php echo $lastErr;?></span></td>
-		</tr>
-		<tr>
-			<td>First Name: </td>
-			<td><input type="text" name="firstname" autocomplete="off"><span class="error"><?php echo $firstErr;?></span></td>
-		</tr>
-		<tr>
-			<td>Email: </td>
-			<td><input type="text" name="email" autocomplete="off"><span class="error"><?php echo $emailErr;?></span></td>
-		</tr>
-		<tr>
-			<td>Username: </td>
-			<td><input type="text" name="username" autocomplete="off"><span class="error"><?php echo $userErr;?></span></td>
-		</tr>
-		<tr>
-			<td>Password: </td>
-			<td><input type="password" name="password" autocomplete="off"><span class="error"><?php echo $passErr;?></span></td>
-		</tr>
-		<tr>
-			<td>Confirm Password: </td>
-			<td><input type="password" name="confirmpw" autocomplete="off"><span class="error"><?php echo $confirmpwErr;?></span></td>
-		</tr>
-	</table>
-	<input type="submit" value="Register" />
-	</form>
+	<div class = "container">
+		<h2> REGISTRATIONS </h2>
+		Fill out all details below: <br>
+		
+		<form method = "post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
+		
+			<table>
+			<tr>
+				<td>Last Name: </td>
+				<td><input type="text" name="lastname" autocomplete="off"><span class="error"><?php echo $lastErr;?></span></td>
+			</tr>
+			<tr>
+				<td>First Name: </td>
+				<td><input type="text" name="firstname" autocomplete="off"><span class="error"><?php echo $firstErr;?></span></td>
+			</tr>
+			<tr>
+				<td>Email: </td>
+				<td><input type="text" name="email" autocomplete="off"><span class="error"><?php echo $emailErr;?></span></td>
+			</tr>
+			<tr>
+				<td>Username: </td>
+				<td><input type="text" name="username" autocomplete="off"><span class="error"><?php echo $userErr;?></span></td>
+			</tr>
+			<tr>
+				<td>Password: </td>
+				<td><input type="password" name="password" autocomplete="off"><span class="error"><?php echo $passErr;?></span></td>
+			</tr>
+			<tr>
+				<td>Confirm Password: </td>
+				<td><input type="password" name="confirmpw" autocomplete="off"><span class="error"><?php echo $confirmpwErr;?></span></td>
+			</tr>
+		</table>
 		<br>
-		<form action="Act9-1Login.php" method="post">
-		<input type="submit" value="Back to Home"/>
-	</form>
-	
+		<input type="submit" value="Register" />
+		</form>
+			<form action="home.php" method="post">
+			<input type="submit" value="Back to Home"/>
+		</form>
+	</div>
 	<!-- If right credentials were used, goes to homescreen -->
 	<?php
 	if ($error == 2){
-		header("Location: Act9-1Login.php");
+		header("Location: home.php");
 	}
 	?>
 	</body>

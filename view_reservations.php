@@ -21,73 +21,35 @@ $reservations = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Equipment Reservations</title>
-  <style>
-    body {
-      background-color: #f4f4f4;
-      font-family: Arial, sans-serif;
-    }
+  <title>View Reservations</title>
+  <link rel="stylesheet" href="view_reservations.css">
+	<link rel="stylesheet" href="transition.css">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #ffffff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      text-align: center;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-
-    th, td {
-      padding: 10px;
-      text-align: center;
-    }
-
-    th {
-      background-color: #333333;
-      color: #ffffff;
-    }
-
-    tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-
-    tr:hover {
-      background-color: #e0e0e0;
-      cursor: pointer;
-    }
-
-    form {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    input[type="submit"] {
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: #ffffff;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      font-family: Arial, sans-serif;
-      font-size: 16px;
-      border-radius: 4px;
-    }
-
-    input[type="submit"]:hover {
-      background-color: #45a049;
-    }
-  </style>
 </head>
 <body>
+  <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <img src = "icon-reservation.png" class = "picture-icon">
+            </div>
+            <div class = navbar-text>
+                <h2 class="logo">Venue Reservation</h2>
+            </div>				  
+
+        </div> 
+        
+        <div class="menu">
+            <ul>
+                <li><a href="home-2.php">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="reservations.php">RESERVE A VENUE</a></li>
+				<li><a href="equipment.php">VIEW AVAILABLE EQUIPMENT</a></li>
+				<li><a href="reservation_form.php">RESERVE EQUIPMENT</a></li>
+            </ul>
+        </div>
+    <div class="container">
   <div class="container">
     <h2>Equipment Reservations</h2>
     <table>

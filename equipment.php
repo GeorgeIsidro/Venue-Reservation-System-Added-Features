@@ -2,65 +2,57 @@
 <html>
 <head>
   <title>Equipment Reservation</title>
+  <title>Venue Reservation System</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-    }
-    
-    h1 {
-      text-align: center;
-    }
-    
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-      background-color: #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    th,
-    td {
-      padding: 12px 15px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-    
-    th {
-      background-color: #f8f8f8;
-      font-weight: bold;
-    }
-    
-    tbody tr:hover {
-      background-color: #f5f5f5;
-    }
-    
-    a {
-      display: inline-block;
-      padding: 8px 12px;
-      background-color: #4CAF50;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 4px;
-    }
-    
-    a:hover {
-      background-color: #45a049;
-    }
-    
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+  .custom-button {
+	  display: inline-block;
+	  padding: 8px 12px;
+	  background-color: #4CAF50;
+	  color: #fff;
+	  text-decoration: none;
+	  border: none;
+	  border-radius: 4px;
+	  cursor: pointer;
+	  margin-top: 10px;
+	}
+
+	.custom-button:hover {
+	  background-color: #45a049;
+	}
   </style>
+  <link rel="stylesheet" href="equipment.css">
+	<link rel="stylesheet" href="transition.css">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+	<script src="equipment.js"> </script>
+
+
 </head>
 <body>
-  <div class="container">
-    <h1>Equipment Reservation</h1>
+  <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <img src = "icon-reservation.png" class = "picture-icon">
+            </div>
+            <div class = navbar-text>
+                <h2 class="logo">Venue Reservation</h2>
+            </div>
+
+
+        
+				  
+
+        </div> 
+        
+        <div class="menu">
+            <ul>
+                <li><a href="home-2.php">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="Act9-1Register.php">REGISTER</a></li>
+                <li><a href="Act9-1Home.php">VENUES</a></li>
+            </ul>
+        </div>
+    <div class="container">
 
     <?php
     // Establish the database connection
@@ -89,7 +81,6 @@
         <tr>
           <th>Name</th>
           <th>Quantity Available</th>
-          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -97,13 +88,17 @@
           <tr>
             <td><?php echo $item['name']; ?></td>
             <td><?php echo $item['available_quantity']; ?></td>
-            <td><a href="reservation_form.php?equipment=<?php echo urlencode($item['name']); ?>">Reserve</a></td>
           </tr>
         <?php endforeach; ?>
       </tbody>
     </table>
-    <a href="view_reservations.php">View All Equipment Reservations</a>
-	<a href="Act9-1Home.php">Home</a>
+
+    <div class="button-container">
+		<button class = "custom-button" id="view" onclick= "window.location.replace('view_reservations.php');" class="reserve-button">View All Equipment Reservations<button>
+        <button class = "custom-button" id="reservation" onclick="window.location.replace('reservation_form.php');" class="reserve-button">Reserve</button>
+        <button class = "custom-button" id="home" onclick="window.location.replace('home-2.php');">Home</button>
+    </div>
+  </div>
   </div>
 </body>
 </html>

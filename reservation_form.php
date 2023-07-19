@@ -1,7 +1,7 @@
 <?php
 // Check if the equipment name is provided in the query parameter
-if (isset($_GET['equipment'])) {
-  $equipmentName = $_GET['equipment'];
+if (isset($_POST['equipment_name'])) {
+  $equipmentName = $_POST['equipment_name'];
 
   // Establish the database connection
   $servername = "localhost";
@@ -49,7 +49,7 @@ if (isset($_GET['equipment'])) {
         header("Location: equipment.php");
         exit;
       } else {
-        echo "Insufficient quantity available. Please choose a lower quantity.";
+        echo '<div class="notification">Insufficient quantity available. Please choose a lower quantity.</div>';
       }
     }
   } else {
@@ -62,126 +62,108 @@ if (isset($_GET['equipment'])) {
 <html>
 <head>
   <title>Equipment Reservation</title>
-  <style>
-    body {
-      background-color: #f4f4f4;
-      font-family: Arial, sans-serif;
-    }
-
-    .container {
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #ffffff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
+  <link rel="stylesheet" href="reservation_form.css">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+	<style>
+	.notification {
+      background-color: #f44336; /* Red background color */
+      color: #ffffff; /* White text color */
       text-align: center;
-    }
-
-    form {
-      margin-top: 20px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    input[type="text"],
-    input[type="number"],
-    input[type="date"],
-    select {
-      width: 100%;
       padding: 10px;
       margin-bottom: 10px;
-      border: 1px solid #ccc;
       border-radius: 4px;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
     }
-
-    input[type="submit"] {
-      width: 100%;
-      padding: 10px;
-      background-color: #4caf50;
-      color: #ffffff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-    }
-
-    input[type="submit"]:hover {
-      background-color: #45a049;
-    }
-
-    .view-reservations {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .view-reservations a {
-      color: #0000ff;
-      text-decoration: underline;
-    }
-  </style>
+	</style>
 </head>
 <body>
-  <div class="container">
-    <h2>Equipment Reservation</h2>
-    <form method="POST" action="">
-      <label for="equipment_name">Equipment Name:</label>
-      <select id="equipment_name" name="equipment_name">
-        <!-- Populate the dropdown menu options dynamically from the equipment table -->
-        <option value="Equipment A">Fender</option>
-        <option value="Equipment B">Podium</option>
-        <option value="Equipment C">Round Table</option>
-        <option value="Equipment D">Long Rectangular Table</option>
-        <option value="Equipment E">Monoblock Chairs</option>
-        <option value="Equipment F">Wireless Microphone</option>
-        <option value="Equipment G">Wired Microphone</option>
-        <option value="Equipment H">Gooseneck Microphone</option>
-        <option value="Equipment I">Circular Platform</option>
-        <option value="Equipment J">Square Platform</option>
-        <option value="Equipment K">Red Carpet</option>
-        <option value="Equipment L">LED Lights</option>
-        <option value="Equipment M">RGB Lights</option>
-      </select>
-      <br>
+<div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <img src = "icon-reservation.png" class = "picture-icon">
+            </div>
+            <div class = navbar-text>
+                <h2 class="logo">Venue Reservation</h2>
+            </div>
 
-      <label for="quantity">Quantity:</label>
-      <input type="number" id="quantity" name="quantity" min="1" required>
-      <br>
 
-      <label for="place">Place to be Assigned:</label>
-      <input type="text" id="place" name="place" required>
-      <br>
+        
+				  
 
-      <label for="date_needed">Date Needed:</label>
-      <input type="date" id="date_needed" name="date_needed" required>
-      <br>
+        </div> 
+        
+        <div class="menu">
+            <ul>
+                <li><a href="home-2.php">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="Act9-1Register.php">REGISTER</a></li>
+                <li><a href="Act9-1Home.php">VENUES</a></li>
+            </ul>
+        </div>  
 
-      <label for="date_reserved">Date Reserved:</label>
-      <input type="date" id="date_reserved" name="date_reserved" required>
-      <br>
+    <div class="container">
+      <h2>Equipment Reservation</h2>
+      <form method="POST" action="">
+        <label for="equipment_name">Equipment Name:</label>
+        <select id="equipment_name" name="equipment_name">
+          <!-- Populate the dropdown menu options dynamically from the equipment table -->
+          <option value="Fender">Fender</option>
+          <option value="Podium">Podium</option>
+          <option value="Round Table">Round Table</option>
+          <option value="Long Rectangular Table">Long Rectangular Table</option>
+          <option value="Monoblock Chairs">Monoblock Chairs</option>
+          <option value="Wireless Microphone">Wireless Microphone</option>
+          <option value="Wired Microphone">Wired Microphone</option>
+          <option value="Gooseneck Microphone">Gooseneck Microphone</option>
+          <option value="Circular Platform">Circular Platform</option>
+          <option value="Square Platform">Square Platform</option>
+          <option value="Red Carpet">Red Carpet</option>
+          <option value="LED Lights">LED Lights</option>
+          <option value="RGB Lights">RGB Lights</option>
+      <option value="Red Carpet">Red Carpet</option>
+      <option value="Green Carpet">Green Carpet</option>
+      <option value="Moving Heads">Moving Heads</option>
+      <option value="Small Monoblock Table">Small Monoblock Table</option>
+      <option value="Big Monoblock Table">Big Monoblock Table</option>
+      <option value="Loose Board">Loose Board</option>
+      <option value="Big Movable White Board">Big Movable White Board</option>
+      <option value="Small Movable White Board">Small Movable White Board</option>
+      <option value="Brown Round Table Cloth">Brown Round Table Cloth</option>
+      <option value="White Round Table Cloth">White Round Table Cloth</option>
+      <option value="Monoblock Seat Cover">Monoblock Seat Cover</option>
+        </select>
+        <br>
 
-      <label for="contact_person">Contact Person:</label>
-      <input type="text" id="contact_person" name="contact_person" required>
-      <br>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" required>
+        <br>
 
-      <label for="sector">Sector:</label>
-      <input type="text" id="sector" name="sector" required>
-      <br>
+        <label for="place">Place to be Assigned:</label>
+        <input type="text" id="place" name="place" required>
+        <br>
 
-      <input type="submit" value="Reserve">
-    </form>
+        <label for="date_needed">Date Needed:</label>
+        <input type="date" id="date_needed" name="date_needed" required>
+        <br>
 
-    <div class="view-reservations">
-      <!-- Add a button for viewing all equipment reservations -->
-      <a href="view_reservations.php">View Equipment Reservations</a>
+        <label for="date_reserved">Date Reserved:</label>
+        <input type="date" id="date_reserved" name="date_reserved" required>
+        <br>
+
+        <label for="contact_person">Contact Person:</label>
+        <input type="text" id="contact_person" name="contact_person" required>
+        <br>
+
+        <label for="sector">Sector:</label>
+        <input type="text" id="sector" name="sector" required>
+        <br>
+
+        <input type="submit" value="Reserve">
+      </form>
+
+    <form action="view-reservations.php" method="post">
+  <input type="submit" value="View Equipment Reservation">
+	</form>
     </div>
   </div>
 </body>

@@ -182,7 +182,7 @@ body {
 	<?php
 		// PHP code here
 		if($userVer == 1 && $passVer == 1){
-			header("Location: Act9-1Home.php");
+			header("Location: home-2.php");
 		}
 	?>
 

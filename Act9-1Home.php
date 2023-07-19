@@ -3,10 +3,11 @@
 <head>
     <title>Home Page</title>
     <style>
-        body {
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-        }
+		body {
+			background: #0F5401;
+			font-family: Agency FB, sans-serif;
+			
+		}
 
         .container {
             max-width: 600px;
@@ -14,10 +15,14 @@
             padding: 20px;
             background-color: #ffffff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: box-shadow 0.3s ease;
         }
 
         h2 {
             text-align: center;
+            color: #333333;
+            margin-bottom: 30px;
         }
 
         table {
@@ -29,6 +34,7 @@
         th, td {
             padding: 10px;
             text-align: center;
+            border-bottom: 1px solid #dddddd;
         }
 
         th {
@@ -45,54 +51,29 @@
             cursor: pointer;
         }
 
-        .logout-form,
-        .reservation-form,
-        .equipment-form {
-            text-align: center;
-            margin-top: 20px;
-        }
+		.menu-bar {
+			display: flex;
+			justify-content: center;
+			margin-top: 20px;
+		}
 
-        .logout-form input[type="submit"],
-        .reservation-form input[type="submit"],
-        .equipment-form input[type="submit"] {
-            padding: 10px 20px;
-            background-color: #45B39D;
-            color: #ffffff;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+		.menu-bar a {
+			padding: 10px 15px; /* Adjusted padding */
+			background-color: #45B39D;
+			color: #ffffff;
+			text-decoration: none;
+			margin: 0 5px; /* Adjusted margin */
+			transition: background-color 0.3s ease;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			border-radius: 4px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
 
-        .logout-form input[type="submit"]:hover,
-        .reservation-form input[type="submit"]:hover,
-        .equipment-form input[type="submit"]:hover {
-            background-color: #138D75;
-        }
+		.menu-bar a:hover {
+			background-color: #138D75;
+		}
 
-        /* Additional Styles */
-        .logout-form input[type="submit"],
-        .reservation-form input[type="submit"],
-        .equipment-form input[type="submit"] {
-            width: 180px;
-            height: 40px;
-        }
-
-        .container {
-            border-radius: 8px;
-            transition: box-shadow 0.3s ease;
-        }
-
-        .container:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            margin-bottom: 30px;
-        }
     </style>
 </head>
 <body>
@@ -132,7 +113,7 @@
         );
     }
 
-    echo "<table style='width:.5' border ='1 px'>";
+    echo "<table>";
     echo "<tr>";
     echo "<th>Venue Name</th>";
     echo "<th>Capacity</th>";
@@ -148,15 +129,46 @@
     mysqli_close($conn);
     ?>
 
-    <form action="Act9-1Login.php" method="logout" class="logout-form">
-        <input type="submit" value="Logout" />
-    </form>
-    <form action="reservations.php" method="reservation" class="reservation-form">
-        <input type="submit" value="Make a Reservation" />
-    </form>
-    <form action="equipment.php" method="equipmentreservation" class="equipment-form">
-        <input type="submit" value="Equipment Reservation" />
-    </form>
+    <div class="menu-bar">
+        <a href="home-2.php">Home</a>
+        <a href="reservations.php">Make a Reservation</a>
+        <a href="equipment.php">Reserve Equipment</a>
+		<a href ="view-database.php"> View Venue Reservations</a>
+		<a href="view_reservations.php">View Equipment Reservations</a>
+    </div>
 </div>
+
+<script>
+    const venueNameCells = document.querySelectorAll('.venue-name');
+    const venueCapacityCells = document.querySelectorAll('.venue-capacity');
+
+    // Array of image URLs corresponding to the venues (you can modify this as per your image URLs)
+    const venueImages = [
+        "Main_Gym.jpg",
+        "Badminton.jpg",
+        "Lounge.jpg"
+    ];
+
+    // Add click event listeners to each venue name cell
+    venueNameCells.forEach((cell, index) => {
+        cell.addEventListener('click', () => {
+            const venueName = cell.innerText;
+            const venueCapacity = venueCapacityCells[index].innerText;
+            const imageUrl = venueImages[index];
+
+            // Create and show the venue details with the image
+            showVenueDetails(venueName, venueCapacity, imageUrl);
+        });
+    });
+
+    // Function to display the venue details with the image
+    function showVenueDetails(venueName, venueCapacity, imageUrl) {
+        // Create a modal or display the details in a different way (e.g., a popup)
+        // Here, we are just using the console to log the details
+        console.log("Venue Name:", venueName);
+        console.log("Capacity:", venueCapacity);
+        console.log("Image URL:", imageUrl);
+    }
+</script>
 </body>
 </html>
