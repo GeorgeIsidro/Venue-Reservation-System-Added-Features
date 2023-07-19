@@ -2,15 +2,19 @@
 <html>
 <head>
   <title>Venue Reservation</title>
+    <link rel="stylesheet" href="reservation_form.css">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #0F5401;
       padding: 20px;
     }
     
     h1 {
       text-align: center;
+	  color: White;
     }
     
     form {
@@ -105,10 +109,29 @@
   </script>
 </head>
 <body>
+<div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <img src = "icon-reservation.png" class = "picture-icon">
+            </div>
+            <div class = navbar-text>
+                <h2 class="logo">Venue Reservation</h2>
+            </div>
+		  
+        </div> 
+        
+        <div class="menu">
+            <ul>
+                <li><a href="home-2.php">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="Act9-1Register.php">REGISTER</a></li>
+                <li><a href="Act9-1Home.php">VENUES</a></li>
+            </ul>
+        </div>  
   <h1>Venue Reservation</h1>
  
   <div id="notification" class="notification"></div>
- 
+ <div class="container">
   <form method="POST" action="" onsubmit="showNotification('');">
     <label for="venues">Venue:</label>
 		<select id="venues" name="venues" required class = "input-field">
