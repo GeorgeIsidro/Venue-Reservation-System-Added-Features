@@ -1,0 +1,92 @@
+*{
+  
+}
+.navbar {
+  background-color: #0F5401; /* Green background color */
+  font-family: 'Montserrat';
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: #ffffff !important; /* White text color */
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.navbar-toggler {
+  border-color: #ffffff;
+}
+
+.navbar-toggler-icon {
+  background-color: #ffffff;  
+}
+
+.navbar-nav .nav-link {
+  margin-right: 10px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #1abc9c !important; /* Hover text color */
+}
+
+.container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.view-reservations {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.view-reservations a {
+  color: #0000ff;
+  text-decoration: underline;
+}

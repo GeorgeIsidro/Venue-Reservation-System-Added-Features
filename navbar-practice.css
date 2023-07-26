@@ -1,0 +1,84 @@
+*{
+
+}
+.body{
+  overflow-y: scroll;
+}
+
+.navbar {
+      background-color: #0F5401; /* Green background color */
+      font-family: 'Montserrat';
+    }
+
+    .navbar-brand,
+    .navbar-nav .nav-link {
+      color: #ffffff !important; /* White text color */
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+    }
+
+    .navbar-toggler {
+      border-color: #ffffff;
+    }
+
+    .navbar-toggler-icon {
+      background-color: #ffffff;
+    }
+
+    .navbar-nav .nav-link {
+      margin-right: 10px;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #1abc9c !important; /* Hover text color */
+    }
+
+  
+  .carousel-item{
+    height:32rem;
+  }
+  .carousel-item img{
+    height: 32rem;
+    
+    object-fit: cover;
+
+   
+    background-size: cover;
+    position: relative;
+  }
+  
+  .container-card{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    justify-content: center;
+    flex-wrap: wrap;
+
+  }
+  
+  .card{
+    margin: 15px;
+    padding: 5px;
+    height: 500px;
+    max-height: 500px;
+    width: 300px;
+  }
+  
+  .card-footer{
+    align-items: center;
+    
+  }
+  .card-image-top{
+    height: 300px;
+  }
+  .card img{
+    height:250px;
+
+  }
+
+  .card img.img-front:hover{
+    opacity: 0;
+    cursor: pointer;
+  }
